@@ -1,0 +1,58 @@
+@host = http://127.0.0.1:5000/
+
+###create a new item
+
+# TODO: CHANGE products to their respective need ma kuan
+POST {{host}}/products
+Content-Type: application/json
+
+{
+    "p_product_name": "Tablet Charger",
+    "p_price": "300.00",
+    "p_quantity": "5",
+    "p_category_id": 1
+}
+
+###read the list
+GET {{host}}/products
+Content-Type: application/json
+
+###read all the products
+GET {{host}}/tableCategories
+Content-Type: application/json
+
+
+###read a single item
+GET {{host}}/products/2
+Content-Type: application/json
+
+ 
+###UPDATE a single item
+PUT {{host}}/products/12
+Content-Type: application/json
+
+{
+    "p_product_name": "Mouse",
+    "p_price": "4500.00",
+    "p_quantity": "6",
+    "p_category_id": 1
+}
+
+PUT {{host}}/specProduct/12
+Content-Type: application/json
+
+{
+    "product_name": "Electric Chair",
+    "price": "12.00",
+    "quantity": "42",
+    "category_id": 1
+}
+
+
+###DELETE an Item
+DELETE {{host}}/products/10
+Content-Type: application/json
+
+#read a single product jud
+GET {{host}}/specProduct/2
+Content-Type: application/json
